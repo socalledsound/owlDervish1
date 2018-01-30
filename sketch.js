@@ -9,8 +9,17 @@ let tempo = 500;
 let xoff = 0;
 let inc = 0.5;
 
-let img;
-let imgPath="AS-body-1.png"
+let img1,img2, img3,img4;
+let img1Path="AS-body-1.png"
+let img2Path = "body2.png";
+let img3Path ="body3.png";
+let img4Path = "body4.png";
+let img5Path ="body5.png";
+let img6Path = "body6.png";
+let img7Path = "body7.png";
+let imgs=[];
+let numImages = 7;
+
 
 let rightBiceps = [];
 let leftBiceps = [];
@@ -32,12 +41,19 @@ let startingLeftYval = 400;
 
 
 function preload() {
-  img = loadImage(imgPath);
+    img1 = loadImage(img1Path);
+    img2 = loadImage(img2Path);
+    img3 = loadImage(img3Path);
+    img4 = loadImage(img4Path);
+    img5 = loadImage(img5Path);
+    img6 = loadImage(img6Path);
+    img7 = loadImage(img7Path);
+    imgs = [img1,img2,img3,img4,img5,img6,img7];
 }
 
 function setup() {
   createCanvas(1000,800);
-  frameRate(25);
+  frameRate(10);
   noStroke();
 
  for(let i=0; i<numArcs; i++) {
@@ -92,7 +108,7 @@ leftBiceps.forEach(function(arm,index){
     
 
 
-image(img,width/2-150,height/2-40,300,300);
+image(imgs[int(random(numImages))],width/2-150,height/2-40,300,300);
 trigArc();
 }
 
